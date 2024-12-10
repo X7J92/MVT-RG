@@ -8,22 +8,11 @@ Abstract:Video-text retrieval aims to precisely search for videos most relevant 
 
 
 ## News
-- :beers: Our paper has been submitted to the TMM.
+- :beers: Our paper has been submitted to the ICLR.
 
 ## Framework
 ![alt text](images/03.png)
 
-## Main Results
-
-
-#### Main results on ActivityNet Captions and Charades-STA
-![alt text](images/t1.png)
-
-#### Main results on TACoS
-
-<div align="center">
-    <img src="images/t2.png" alt="Main results on TACoS" width="550">
-</div>
 
 ### Data Preparation
 Please download the visual features from [here](https://pan.baidu.com/s/1_JiOUG3FKkKXij-0kVfkuA?pwd=ryeh) and save it to the `data/` folder. We expect the directory structure to be the following:
