@@ -11,7 +11,7 @@ Abstract:Video-text retrieval aims to precisely search for videos most relevant 
 - :beers: Our paper has been submitted to the ICLR.
 
 ## Framework
-![alt text](02.png)
+![alt text](2.png)
 
 
 ### Data Preparation
