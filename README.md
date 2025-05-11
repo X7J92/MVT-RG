@@ -14,19 +14,6 @@ Abstract:Video-text retrieval aims to precisely search for videos most relevant 
 ![alt text](2.png)
 
 
-### Data Preparation
-Please download the visual features from [here](https://pan.baidu.com/s/1_JiOUG3FKkKXij-0kVfkuA?pwd=ryeh) and save it to the `data/` folder. We expect the directory structure to be the following:
-
-```
-data
-├── activitynet
-│   ├── sub_activitynet_v1-3.c3d.hdf5
-│   ├── glove.pkl
-│   ├── train_data.json
-│   ├── val_data.json
-│   ├── test_data.json
-
-```
 
 ## Prerequisites
 - python 3.5
