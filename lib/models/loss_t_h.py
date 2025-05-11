@@ -187,7 +187,7 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
             # print(cmpm_loss)
             loss_layer_nce2.append(cmpm_loss)
 
-        loss_IVC_batch2 = (torch.max(loss_layer_nce2[0] - loss_layer_nce2[1] + 0.150, 0)[0])
+        loss_IVC_batch2 = (torch.max(loss_layer_nce2[0] - loss_layer_nce2[1] + 0.50, 0)[0])
         loss_NCE_batch2 = (loss_layer_nce2[1] + loss_layer_nce2[0])*0.5
         loss_IVC_list.append(loss_IVC_batch2)
         loss_NCE_list.append(loss_NCE_batch2)
@@ -203,7 +203,7 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
              cmpm_loss = compute_cmpm_loss(vg_hs_video, batch_output_tensor_layer_mask, mask,logit_scale)
              loss_layer_nce3.append(cmpm_loss)
 
-         loss_IVC_batch3 = (torch.max(loss_layer_nce3[2] - loss_layer_nce3[1] + 0.150, 0)[0] + torch.max(loss_layer_nce3[1] - loss_layer_nce3[0] + 0.150, 0)[0])*1/2
+         loss_IVC_batch3 = (torch.max(loss_layer_nce3[2] - loss_layer_nce3[1] + 0.50, 0)[0] + torch.max(loss_layer_nce3[1] - loss_layer_nce3[0] + 0.50, 0)[0])*1/2
          loss_NCE_batch3 = (loss_layer_nce3[0] + loss_layer_nce3[1]+loss_layer_nce3[2])*1/3
          loss_IVC_list.append(loss_IVC_batch3)
          loss_NCE_list.append(loss_NCE_batch3)
@@ -219,7 +219,7 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
             cmpm_loss = compute_cmpm_loss(vg_hs_video, batch_output_tensor_layer_mask, mask,logit_scale)
             loss_layer_nce4.append(cmpm_loss)
 
-         loss_IVC_batch4 = (torch.max(loss_layer_nce4[3] - loss_layer_nce4[2] + 0.150, 0)[0] + torch.max(loss_layer_nce4[2] - loss_layer_nce4[1] + 0.150, 0)[0]+torch.max(loss_layer_nce4[1] - loss_layer_nce4[0] + 0.150, 0)[0]) * 1 / 3
+         loss_IVC_batch4 = (torch.max(loss_layer_nce4[3] - loss_layer_nce4[2] + 0.50, 0)[0] + torch.max(loss_layer_nce4[2] - loss_layer_nce4[1] + 0.50, 0)[0]+torch.max(loss_layer_nce4[1] - loss_layer_nce4[0] + 0.50, 0)[0]) * 1 / 3
          loss_NCE_batch4 = (loss_layer_nce4[0] + loss_layer_nce4[1] + loss_layer_nce4[2]+loss_layer_nce4[3]) * 1 / 4
          loss_IVC_list.append(loss_IVC_batch4)
          loss_NCE_list.append(loss_NCE_batch4)
@@ -236,10 +236,10 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
             cmpm_loss = compute_cmpm_loss(vg_hs_video, batch_output_tensor_layer_mask, mask,logit_scale)
             loss_layer_nce5.append(cmpm_loss)
 
-        loss_IVC_batch5 = (torch.max(loss_layer_nce5[4] - loss_layer_nce5[3] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce5[3] - loss_layer_nce5[2] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce5[2] - loss_layer_nce5[1] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce5[1] - loss_layer_nce5[0] + 0.150, 0)[0]) * 1 / 4
+        loss_IVC_batch5 = (torch.max(loss_layer_nce5[4] - loss_layer_nce5[3] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce5[3] - loss_layer_nce5[2] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce5[2] - loss_layer_nce5[1] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce5[1] - loss_layer_nce5[0] + 0.50, 0)[0]) * 1 / 4
         loss_NCE_batch5 = (loss_layer_nce5[0] + loss_layer_nce5[1] + loss_layer_nce5[2] + loss_layer_nce5[3]+loss_layer_nce5[4]) * 1 / 5
         loss_IVC_list.append(loss_IVC_batch5)
         loss_NCE_list.append(loss_NCE_batch5)
@@ -255,11 +255,11 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
             cmpm_loss = compute_cmpm_loss(vg_hs_video, batch_output_tensor_layer_mask, mask,logit_scale)
             loss_layer_nce6.append(cmpm_loss)
 
-        loss_IVC_batch6 = (torch.max(loss_layer_nce6[5] - loss_layer_nce6[4] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce6[4] - loss_layer_nce6[3] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce6[3] - loss_layer_nce6[2] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce6[2] - loss_layer_nce6[1] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce6[1] - loss_layer_nce6[0] + 0.150, 0)[0]) * 1 / 5
+        loss_IVC_batch6 = (torch.max(loss_layer_nce6[5] - loss_layer_nce6[4] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce6[4] - loss_layer_nce6[3] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce6[3] - loss_layer_nce6[2] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce6[2] - loss_layer_nce6[1] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce6[1] - loss_layer_nce6[0] + 0.50, 0)[0]) * 1 / 5
         loss_NCE_batch6 = (loss_layer_nce6[0] + loss_layer_nce6[1] + loss_layer_nce6[2] + loss_layer_nce6[3]+loss_layer_nce6[4]+loss_layer_nce6[5]) * 1 / 6
         loss_IVC_list.append(loss_IVC_batch6)
         loss_NCE_list.append(loss_NCE_batch6)
@@ -276,11 +276,11 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
             loss_layer_nce7.append(cmpm_loss)
 
         loss_IVC_batch7 = (torch.max(loss_layer_nce7[6] - loss_layer_nce7[5] + 0.50, 0)[0] +
-                           torch.max(loss_layer_nce7[5] - loss_layer_nce7[4] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce7[4] - loss_layer_nce7[3] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce7[3] - loss_layer_nce7[2] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce7[2] - loss_layer_nce7[1] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce7[1] - loss_layer_nce7[0] + 0.150, 0)[0]) * 1 / 6
+                           torch.max(loss_layer_nce7[5] - loss_layer_nce7[4] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce7[4] - loss_layer_nce7[3] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce7[3] - loss_layer_nce7[2] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce7[2] - loss_layer_nce7[1] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce7[1] - loss_layer_nce7[0] + 0.50, 0)[0]) * 1 / 6
         loss_NCE_batch7 = (loss_layer_nce7[0] + loss_layer_nce7[1] + loss_layer_nce7[2] + loss_layer_nce7[3]+loss_layer_nce7[4]+loss_layer_nce7[5]+loss_layer_nce7[6]) * 1 / 7
         loss_IVC_list.append(loss_IVC_batch7)
         loss_NCE_list.append(loss_NCE_batch7)
@@ -296,13 +296,13 @@ def loss_t_h(batch_output_tensor,vg_hs_video,sentence_number,logit_scale):
             cmpm_loss = compute_cmpm_loss(vg_hs_video, batch_output_tensor_layer_mask, mask,logit_scale)
             loss_layer_nce8.append(cmpm_loss)
 
-        loss_IVC_batch8 = (torch.max(loss_layer_nce8[7] - loss_layer_nce8[6] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce8[6] - loss_layer_nce8[5] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce8[5] - loss_layer_nce8[4] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce8[4] - loss_layer_nce8[3] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce8[3] - loss_layer_nce8[2] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce8[2] - loss_layer_nce8[1] + 0.150, 0)[0] +
-                           torch.max(loss_layer_nce8[1] - loss_layer_nce8[0] + 0.150, 0)[0]) * 1 / 7
+        loss_IVC_batch8 = (torch.max(loss_layer_nce8[7] - loss_layer_nce8[6] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce8[6] - loss_layer_nce8[5] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce8[5] - loss_layer_nce8[4] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce8[4] - loss_layer_nce8[3] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce8[3] - loss_layer_nce8[2] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce8[2] - loss_layer_nce8[1] + 0.50, 0)[0] +
+                           torch.max(loss_layer_nce8[1] - loss_layer_nce8[0] + 0.50, 0)[0]) * 1 / 7
         loss_NCE_batch8 = (loss_layer_nce8[0] + loss_layer_nce8[1] + loss_layer_nce8[2] + loss_layer_nce8[3]+loss_layer_nce8[4]+loss_layer_nce8[5]+loss_layer_nce8[6]) * 1 / 8
         loss_NCE_list.append(loss_NCE_batch8)
         loss_IVC_list.append(loss_IVC_batch8)
